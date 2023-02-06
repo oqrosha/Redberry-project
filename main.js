@@ -39,6 +39,7 @@ function validation1() {
         Input.innerHTML += `
             <i id="Warning" class="fa-solid fa-triangle-exclamation"></i>
         `;
+        document.getElementById("Verified1").style.display = "none";
     } else{
         document.getElementById("Input1").style.border = "1px solid #98E37E";
         let Input = document.getElementById("Verified1").style.display = "block";
@@ -60,6 +61,7 @@ function validation2() {
         Input.innerHTML += `
             <i id="Warning" class="fa-solid fa-triangle-exclamation"></i>
         `;
+        document.getElementById("Verified2").style.display = "none";
     } else{
         document.getElementById("Input2").style.border = "1px solid #98E37E";
         let Input = document.getElementById("Verified2").style.display = "block";
