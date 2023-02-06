@@ -223,7 +223,18 @@ body .bg-img{
     color: #1A1A1A;
 }
 
-#ImageInput{
+#ImageInput[type="file"] {
+    display: none;
+}
+
+#ImageLabel {
+    width: 69px;
+    height: 17px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
     position: absolute;
     width: 107px;
     height: 27px;
@@ -236,14 +247,12 @@ body .bg-img{
     justify-content: center;
     align-items: center;
     border: 0px;
-}
-
-#ImageInput span{
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 #thirdInput{
@@ -382,8 +391,12 @@ body .bg-img{
     color: rgba(0, 0, 0, 0.6);
 }
 
-#Input5::placeholder, #Input8::placeholder, #Input9::placeholder{
-    top: 15px;
+#Input4::placeholder, #Input8::placeholder, #Input9::placeholder{
+    top: 16px;
+}
+
+#Input5::placeholder {
+    top: 18px;
 }
 
 #Input1:hover, #Input2:hover, #Input3:hover, #Input4:hover, #Input5:hover,
@@ -502,7 +515,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 20px;
 }
 
-#inputCalendar{
+#inputCalendar1, #inputCalendar2, #inputCalendar3 {
     position: absolute;
     height: 48px;
     width: 355px;
@@ -514,6 +527,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
+    outline: none;
 }
 
 #tenthInput{
@@ -684,10 +698,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: #FFFFFF;
     border: 1px solid #BCBCBC;
     border-radius: 4px;
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
+}
+
+#Input12 option {
+    width: 371px;
+    height: 48px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #1A1A1A;
 }
 
 #thirteenthInput {
@@ -734,7 +754,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     width: 798px;
     height: 0px;
-    left: 140px;
+    left: 149px;
     top: 695px;
     border: 1px solid #c1c1c1bb;
 }
@@ -823,4 +843,40 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+#Warning1, #Warning2, #Warning8, #Warning9, #Warning12, #Warning13 {
+    display: none;
+    position: absolute;
+    width: 18px;
+    top: 53px;
+    left: 410px;
+    color: #F02424;
+}
+
+#Verified1, #Verified2, #Verified12, #Verified13 {
+    display: none;
+    position: absolute;
+    width: 18px;
+    top: 53px;
+    left: 363px;
+    color: #98E37E;
+}
+
+#Warning4, #Warning5, #Warning6, #Warning7, #Warning10, #Warning11, #Warning14 {
+    display: none;
+    position: absolute;
+    width: 18px;
+    top: 55px;
+    left: 835px;
+    color: #F02424;
+}
+
+#Verified4, #Verified5, #Verified6, #Verified7, #Verified10, #Verified11, #Verified14 {
+    display: none;
+    position: absolute;
+    width: 18px;
+    top: 55px;
+    left: 790px;
+    color: #98E37E;
 }
