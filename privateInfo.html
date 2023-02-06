@@ -5,30 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redberry</title>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/ebb471ca54.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <main id="main" class="PrivateInfo">
         <section id="left" class="left">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i onclick="GoingToStart()" class="fa-solid fa-chevron-left"></i>
             <span class="First" >პირადი ინფო</span>
             <span class="Second">1/3</span>
             <div id="line2" class="line2"></div>
 
             <div id="firstInput" class="firstInput">
                 <label id="label" for="Input1">სახელი</label>
-                <input id="Input1" class="Input1" type="text" placeholder="ანზორ">
+                <input oninput="validation1()" id="Input1" class="Input1" type="text" placeholder="ანზორ">
+                <i id="Warning1" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified1" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text">მინიმუმ 2 ასო, ქართული ასოები</figcaption>    
             </div>
             <div id="secondInput" class="secondInput">
                 <label id="label" for="Input2">გვარი</label>
-                <input id="Input2" class="Input2" type="text" placeholder="მუმლაძე">
+                <input oninput="validation2()" id="Input2" class="Input2" type="text" placeholder="მუმლაძე">
+                <i id="Warning2" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified2" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
             </div>
 
             <span id="PersonalPhoto" class="PersonalPhoto">პირადი ფოტოს ატვირთვა</span>
-            <button id="ImageInput" type="image"><span>ატვირთვა</span></button>
+            <label for="ImageInput" id="ImageLabel">ატვირთვა</label>
+            <input id="ImageInput" type="file">
 
             <div id="thirdInput" class="thirdInput">
                 <label id="label" for="Input3">ჩემ შესახებ (არასავალდებულო)</label>
@@ -37,20 +41,26 @@
 
             <div id="fourthInput" class="fourthInput">
                 <label id="label" for="Input4">ელ.ფოსტა</label>
-                <input type="text" id="Input4" placeholder="anzorr000@redberry.ge">
+                <input oninput="validation3()" type="text" id="Input4" placeholder="anzorr000@redberry.ge">
+                <i id="Warning4" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified4" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">უნდა მთავრდებოდეს @redberry.ge-ით</figcaption>
             </div>
 
             <div id="fifthInput" class="fifthInput">
                 <label id="label" for="Input5">მობილურის ნომერი</label>
-                <input type="text" id="Input5" placeholder="+995 551 12 34 56">
+                <input oninput="validation4()" type="text" id="Input5" placeholder="+995 551 12 34 56">
+                <i id="Warning5" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified5" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</figcaption>
             </div>
 
-            <button id="Next" class="Next"><span>შემდეგი</span></button>
+            <button type="button" onclick="GoingToExperience()" id="Next" class="Next"><span>შემდეგი</span></button>
         </section>
         <section class="right"></section>
     </main>
     <script src="https://kit.fontawesome.com/ebb471ca54.js" crossorigin="anonymous"></script>
+    <script src="./Script.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

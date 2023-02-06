@@ -5,49 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redberry</title>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/ebb471ca54.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <main id="main" class="Education">
-        <sectiob id="left" class="left">
-            <i class="fa-solid fa-chevron-left"></i>
+        <section id="left" class="left">
+            <i onclick="GoingToStart()" class="fa-solid fa-chevron-left"></i>
             <span class="First" >განათლება</span>
             <span class="Second">3/3</span>
             <div id="line2" class="line2"></div>
 
             <div id="eleventhInput" class="eleventhInput">
                 <label id="label" for="Input11">სასწავლებელი</label>
-                <input type="text" id="Input11" placeholder="სასწავლებელი">
+                <input oninput="validation10()" type="text" id="Input11" placeholder="სასწავლებელი">
+                <i id="Warning11" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified11" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">მინიმუმ 2 სიმბოლო</figcaption>
             </div>
 
             <div id="twelfthInput" class="twelfthInput">
                 <label id="label" for="Input12">ხარისხი</label>
-                <input type="text" id="Input12" placeholder="აირჩიეთ ხარისხი">
+                <select oninput="validation11()" name="Input12" id="Input12">
+                    <option value="0"><span>აირჩიეთ ხარისხი</span></option>
+                    <option value="1"><span>საშუალო სკოლის დიპლომი</span></option>
+                    <option value="2"><span>ზოგადსაგანმანათლებლო დიპლომი</span></option>
+                    <option value="3"><span>ბაკალავრი</span></option>
+                    <option value="4"><span>მაგისტრი</span></option>
+                    <option value="5"><span>დოქტორი</span></option>
+                    <option value="6"><span>ასოცირებული ხარისხი</span></option>
+                    <option value="7"><span>სტუდენტი</span></option>
+                    <option value="8"><span>კოლეჯი(ხარისიხს გარეშე)</span></option>
+                    <option value="9"><span>სხვა</span></option>
+                </select>
+                <i id="Warning12" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified12" class="fa-solid fa-circle-check"></i>
             </div>
 
             <div id="thirteenthInput" class="thirteenthInput">
-                <label id="label" for="inputCalendar">დამთავრების რიცხვი</label>
-                <input type="date" id="inputCalendar">
+                <label id="label" for="inputCalendar3">დამთავრების რიცხვი</label>
+                <input oninput="validation12()" type="date" id="inputCalendar3">
+                <i id="Warning13" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified13" class="fa-solid fa-circle-check"></i>
             </div>
 
             <div id="fourteenthInput" class="fourteenthInput">
                 <label id="label" for="Input14">აღწერა</label>
-                <textarea name="Input14" id="Input14" placeholder="განათლების აღწერა"></textarea>
+                <textarea oninput="validation13()" name="Input14" id="Input14" placeholder="განათლების აღწერა"></textarea>
+                <i id="Warning14" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified14" class="fa-solid fa-circle-check"></i>
             </div>
 
             <div id="line4" class="line4"></div>
 
             <button type="button" id="moreEducation" class="moreEducation"><span>მეტი გამოცდილების დამატება</span></button>
 
-            <button id="back2" class="back2"><span>უკან</span></button>
+            <button type="button" onclick="GoingBackToExperience()" id="back2" class="back2"><span>უკან</span></button>
 
-            <button id="Next3" class="Next3"><span>დასრულება</span></button>
+            <button type="button" onclick="GoingToResume()" id="Next3" class="Next3"><span>დასრულება</span></button>
 
-        </sectiob>
-        <sectiob class="right"></sectiob>
+        </section>
+        <section class="right"></section>
     </main>
     <script src="https://kit.fontawesome.com/ebb471ca54.js" crossorigin="anonymous"></script>
+    <script src="./Script.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

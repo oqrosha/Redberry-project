@@ -5,54 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redberry</title>
-    <link rel="stylesheet" href="https://kit.fontawesome.com/ebb471ca54.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <main id="main" class="Experience">
         <section id="left" class="left">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i onclick="GoingToStart()" class="fa-solid fa-chevron-left"></i>
             <span class="First" >გამოცდილება</span>
             <span class="Second">2/3</span>
             <div id="line2" class="line2"></div>
 
             <div id="sixthInput" class="sixthInput">
                 <label id="label" for="Input6">თანამდებობა</label>
-                <input type="text" id="Input6" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
+                <input oninput="validation5()" type="text" id="Input6" placeholder="დეველოპერი, დიზაინერი, ა.შ.">
+                <i id="Warning6" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified6" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">მინიმუმ 2 სიმბოლო</figcaption>
             </div>
 
             <div id="seventhInput" class="seventhInput">
                 <label id="label" for="Input7">დამსაქმებელი</label>
-                <input type="text" id="Input7" placeholder="დამსაქმებელი">
+                <input oninput="validation6()" type="text" id="Input7" placeholder="დამსაქმებელი">
+                <i id="Warning7" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified7" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">მინიმუმ 2 სიმბოლო</figcaption>
             </div>
 
             <div id="eighthInput" class="eighthInput">
                 <label id="label" for="Input8">დაწყების რიცხვი</label>
-                <input type="date" id="inputCalendar">
+                <input oninput="validation7()" type="date" id="inputCalendar1">
+                <i id="Warning8" class="fa-solid fa-triangle-exclamation"></i>
             </div>
 
             <div id="ninthInput" class="ninthInput">
                 <label id="label" for="Input9">დამთავრების რიცხვი</label>
-                <input type="date" id="inputCalendar">
+                <input oninput="validation8()" type="date" id="inputCalendar2">
+                <i id="Warning9" class="fa-solid fa-triangle-exclamation"></i>
             </div>
 
             <div id="tenthInput" class="tenthInput">
                 <label id="label" for="Input10">ჩემ შესახებ (არასავალდებულო)</label>
-                <textarea name="Input10" id="Input10" placeholder="ზოგადი ინფო შენს შესახებ"></textarea>
+                <textarea oninput="validation9()" name="Input10" id="Input10" placeholder="ზოგადი ინფო შენს შესახებ"></textarea>
+                <i id="Warning10" class="fa-solid fa-triangle-exclamation"></i>
+                <i id="Verified10" class="fa-solid fa-circle-check"></i>
             </div>
 
             <div id="line3" class="line3"></div>
 
             <button type="button" id="moreExperience" class="moreExperience"><span>მეტი გამოცდილების დამატება</span></button>
 
-            <button id="back" class="back"><span>უკან</span></button>
+            <button type="button" onclick="GoingBackToPrivateInfo()" id="back" class="back"><span>უკან</span></button>
 
-            <button id="Next2" class="Next2"><span>შემდეგი</span></button>
+            <button type="button" onclick="GoingToEducation()" id="Next2" class="Next2"><span>შემდეგი</span></button>
         </section>
         <section class="right"></section>
     </main>
     <script src="https://kit.fontawesome.com/ebb471ca54.js" crossorigin="anonymous"></script>
+    <script src="./Script.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
