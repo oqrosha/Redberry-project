@@ -102,7 +102,7 @@ body .bg-img{
     background-color: #4747470b;
 }
 
-#main .First {
+#left .First {
     position: absolute;
     width: 179px;
     height: 29px;
@@ -115,7 +115,7 @@ body .bg-img{
     color: #1A1A1A;
 }
 
-#main .Second{
+#left .Second{
     position: absolute;
     width: 29px;
     height: 24px;
@@ -228,13 +228,6 @@ body .bg-img{
 }
 
 #ImageLabel {
-    width: 69px;
-    height: 17px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #FFFFFF;
     position: absolute;
     width: 107px;
     height: 27px;
@@ -633,7 +626,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     width: 113px;
     height: 48px;
-    left: 150px;
+    left: 149px;
     bottom: 65px;
     background: #6B40E3;
     border-radius: 4px;
@@ -879,4 +872,317 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     top: 55px;
     left: 790px;
     color: #98E37E;
+}
+
+#right{
+    position: relative;
+}
+
+#RightName {   
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    color: #F93B1D;
+    margin: 0px;
+    display: none;
+}
+
+#RightSurame {   
+    position: relative;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    color: #F93B1D;
+    margin: 0px 8px;
+    z-index: 11;
+    display: none;
+}
+
+#RightImage {
+    position: absolute;
+    width: 246px;
+    height: 246px;
+    left: 501px;
+    top: 48px;
+    background-image: url(.jpg);
+    border-radius: 50%;
+    margin: 0px;
+    background-size: cover;
+    background-position: center;
+    display: none;
+}
+
+#fa-at {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 81px;
+    top: 132px;
+    color: #898989;
+    margin: 0px;
+    display: none;
+}
+
+#RightMail {
+    position: absolute;
+    width: 179px;
+    height: 21px;
+    left: 111px;
+    top: 127px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1A1A1A;
+    margin: 0px;
+    display: none;
+}
+
+#fa-phone {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 81px;
+    top: 162px;
+    color: #898989;
+    margin: 0px;
+    display: none;
+}
+
+#RightPhoneNumber {
+    position: absolute;
+    height: 21px;
+    left: 111px;
+    top: 158px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1A1A1A;
+    margin: 0px;
+    display: none;
+}
+
+#RightAboutMe {
+    position: absolute;
+    width: 118px;
+    height: 22px;
+    left: 80px;
+    top: 213px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+    margin: 0px;
+    display: none;
+}
+
+#RightAboutMeInput {
+    position: relative;
+    width: 432px;
+    height: 72px;
+    left: 80px;
+    top: 250px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: lowercase;
+    color: #000000;
+    margin: 0px;
+    display: none;
+}
+
+#forNameAndSurname {
+    position: absolute;
+    top: 68px;
+    left: 80px;
+}
+
+#lineForRight {
+    position: relative;
+    width: 662px;
+    height: 0px;
+    left: 80px;
+    top: 320px;
+    border: 1px solid #C8C8C8;
+}
+
+#lineForRight2{
+    position: relative;
+    width: 662px;
+    height: 0px;
+    left: 80px;
+    top: 530px;
+    border: 1px solid #C8C8C8;
+}
+
+#ExperiencePElement{
+    position: absolute;
+    width: 143px;
+    height: 22px;
+    left: 80px;
+    top: 400px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+    display: none;
+}
+
+#EmployeeInput{
+    position: relative;
+    width: max-content;
+    height: 20px;
+    left: 80px;
+    top: 370px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+    display: none;
+}
+
+#EmployerInput{
+    position: relative;
+    width: max-content;
+    height: 20px;
+    left: 90px;
+    top: 370px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+    display: none;
+}
+
+#StartTime{
+    position: absolute;
+    width: 183px;
+    height: 19px;
+    left: 80px;
+    top: 475px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+    display: none;
+}
+
+#EndTime{
+    position: absolute;
+    width: 183px;
+    height: 19px;
+    left: 180px;
+    top: 475px;
+    display: none;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+    display: none;
+}
+
+#ExperienceDescription{
+    position: absolute;
+    width: 662px;
+    height: 66px;
+    left: 80px;
+    top: 515px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+    display: none;
+}
+
+#RightEducationElement{
+    position: absolute;
+    width: 115px;
+    height: 22px;
+    left: 80px;
+    top: 665px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+    display: none;
+}
+
+#RightAcademy{
+    position: relative;
+    width: max-content;
+    height: 20px;
+    left: 80px;
+    top: 585px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+    display: none;
+}
+
+#RightSelect{
+    position: relative;
+    width: max-content;
+    height: 20px;
+    left: 90px;
+    top: 585px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+    display: none;
+}
+
+#RightEndTime2{
+    position: absolute;
+    width: 84px;
+    height: 19px;
+    left: 80px;
+    top: 743px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+    display: none;
+}
+
+#EducationDescription{
+    position: absolute;
+    width: 662px;
+    height: 88px;
+    left: 80px;
+    top: 783px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: lowercase;
+    color: #000000;
+    display: none;
+}
+
+#Logo2ForRight{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 78px;
+    top: 994px;
+    background: url("https://s3-alpha-sig.figma.com/img/d9ef/b422/d4949dfdb96039227566f52e81fffc44?Expires=1676851200&Signature=qSp6plD4Io~CmPZ-6eHtJnKYTrEOYJE6QGSuUzfJQAajwQSfmabgV10yH4A8-JDIdjbV0-c-bQrsnrreYazJU6prtwUGAOlEvxV~y5R5A-wBfx3lz7fLXgOd6us-WtNKEd0kpeQZn3arxwYH2GnOfruWFmXF~OEjt5~4UtCvkCn7vEZ6p8k3betWoyAGtoHvfxbUcJwJKttBdNlJKgEYeRm5z7KhjVy~gmSRffKEaFxnic5GWAXsuslzbbcfhGxnQoPr5Fsd3hLy5uWazuUxG1tei9tM-p2poh6FNUP5DyrHqixBRgnZfFPB9pxyOEO4syUScUHoAnUoKyTDX~g8rw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+    background-size: cover;
 }

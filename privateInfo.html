@@ -7,7 +7,7 @@
     <title>Redberry</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload="NonReload()">
     <main id="main" class="PrivateInfo">
         <section id="left" class="left">
             <i onclick="GoingToStart()" class="fa-solid fa-chevron-left"></i>
@@ -17,14 +17,14 @@
 
             <div id="firstInput" class="firstInput">
                 <label id="label" for="Input1">სახელი</label>
-                <input oninput="validation1()" id="Input1" class="Input1" type="text" placeholder="ანზორ">
+                <input oninput="validation1(), storage1()" id="Input1" class="Input1" type="text" placeholder="შეიყვანეთ სახელი">
                 <i id="Warning1" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified1" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text">მინიმუმ 2 ასო, ქართული ასოები</figcaption>    
             </div>
             <div id="secondInput" class="secondInput">
                 <label id="label" for="Input2">გვარი</label>
-                <input oninput="validation2()" id="Input2" class="Input2" type="text" placeholder="მუმლაძე">
+                <input oninput="validation2(), storage2()" id="Input2" class="Input2" type="text" placeholder="შეიყვანეთ გვარი">
                 <i id="Warning2" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified2" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text">მინიმუმ 2 ასო, ქართული ასოები</figcaption>
@@ -32,16 +32,16 @@
 
             <span id="PersonalPhoto" class="PersonalPhoto">პირადი ფოტოს ატვირთვა</span>
             <label for="ImageInput" id="ImageLabel">ატვირთვა</label>
-            <input id="ImageInput" type="file">
+            <input onchange="pictureUpload(event)" id="ImageInput" type="file">
 
             <div id="thirdInput" class="thirdInput">
                 <label id="label" for="Input3">ჩემ შესახებ (არასავალდებულო)</label>
-                <textarea name="Input3" id="Input3" placeholder="ზოგადი ინფო შენს შესახებ"></textarea>
+                <textarea oninput="validationOfDescription()" onchange="storage3()" name="Input3" id="Input3" placeholder="ზოგადი ინფო შენს შესახებ"></textarea>
             </div>
 
             <div id="fourthInput" class="fourthInput">
                 <label id="label" for="Input4">ელ.ფოსტა</label>
-                <input oninput="validation3()" type="text" id="Input4" placeholder="anzorr000@redberry.ge">
+                <input oninput="validation3(), storage4()" type="text" id="Input4" placeholder="anzorr000@redberry.ge">
                 <i id="Warning4" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified4" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">უნდა მთავრდებოდეს @redberry.ge-ით</figcaption>
@@ -49,7 +49,7 @@
 
             <div id="fifthInput" class="fifthInput">
                 <label id="label" for="Input5">მობილურის ნომერი</label>
-                <input oninput="validation4()" type="text" id="Input5" placeholder="+995 551 12 34 56">
+                <input oninput="validation4(), storage5()" type="text" id="Input5" placeholder="+995 551 12 34 56">
                 <i id="Warning5" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified5" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</figcaption>
@@ -57,8 +57,71 @@
 
             <button type="button" onclick="GoingToExperience()" id="Next" class="Next"><span>შემდეგი</span></button>
         </section>
-        <section class="right"></section>
+        <section id="right" class="right">
+            <div id="forNameAndSurname" class="forNameAndSurname">
+                <p id="RightName" class="RightName"></p>
+                <p id="RightSurame" class="RightSurame"></p>
+            </div>
+            <div id="RightImage" class="RightImage"></div>
+            <i id="fa-at" class="fa-solid fa-at"></i>
+            <p id="RightMail" class="RightMail"></p>
+            <i id="fa-phone" class="fa-solid fa-phone"></i>
+            <p id="RightPhoneNumber" class="RightPhoneNumber"></p>
+            <p id="RightAboutMe" class="RightAboutMe">ჩემ შესახებ</p>
+            <p id="RightAboutMeInput" class="RightAboutMeInput"></p>
+
+            <div id="Logo2ForRight" class="Logo2ForRight"></div>
+        </section>
     </main>
+    <script>
+        
+    function pictureUpload(event) {
+        let RightImage = document.getElementById("RightImage");
+        RightImage.style.content = "url("+URL.createObjectURL(event.target.files[0])+")";
+    }
+    document.querySelector("#ImageInput").addEventListener("change", function () {
+        let fileReader = new FileReader();
+        fileReader.addEventListener("load", () => {
+            sessionStorage.setItem("photo1", fileReader.result);
+            localStorage.setItem("photo1", fileReader.result);
+        });
+        fileReader.readAsDataURL(this.files[0]);
+        return true;
+    });
+
+    function NonReload() {
+        document.getElementById("Input1").value = localStorage.getItem("name");
+        document.getElementById("Input2").value = localStorage.getItem("Surname");
+        document.getElementById("Input3").value = localStorage.getItem("Description");
+        document.getElementById("Input4").value = localStorage.getItem("mail");
+        document.getElementById("Input5").value = localStorage.getItem("Mobile number");
+        if(document.getElementById("RightImage").style.content = "url("+localStorage.getItem("photo1")+")"){
+            document.getElementById("RightImage").style.display = "block";
+        }
+
+        if(localStorage.getItem("name") != "" && localStorage.getItem("name") != null ){
+            storage1();
+            validation1();
+        }
+        if(localStorage.getItem("Surname") != "" && localStorage.getItem("Surname") != null){
+            storage2();
+            validation2();
+        }
+        if(localStorage.getItem("Description") != "" && localStorage.getItem("Description") != null){
+            storage3();
+            validationOfDescription();
+        }
+        if(localStorage.getItem("mail") != "" && localStorage.getItem("mail") != null){
+            storage4();
+            validation3();
+        }
+        if(localStorage.getItem("Mobile number") != "" && localStorage.getItem("Mobile number") != null){
+            storage5();
+            validation4();
+        }
+    }
+
+    </script>
     <script src="https://kit.fontawesome.com/ebb471ca54.js" crossorigin="anonymous"></script>
     <script src="./Script.js"></script>
     <script src="./main.js"></script>

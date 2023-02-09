@@ -7,7 +7,7 @@
     <title>Redberry</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body onload="DisplayDataFromExperience(), NonReloadEducation()">
     <main id="main" class="Education">
         <section id="left" class="left">
             <i onclick="GoingToStart()" class="fa-solid fa-chevron-left"></i>
@@ -17,7 +17,7 @@
 
             <div id="eleventhInput" class="eleventhInput">
                 <label id="label" for="Input11">სასწავლებელი</label>
-                <input oninput="validation10()" type="text" id="Input11" placeholder="სასწავლებელი">
+                <input oninput="validation10(), storage11()" type="text" id="Input11" placeholder="სასწავლებელი">
                 <i id="Warning11" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified11" class="fa-solid fa-circle-check"></i>
                 <figcaption id="text2">მინიმუმ 2 სიმბოლო</figcaption>
@@ -25,17 +25,17 @@
 
             <div id="twelfthInput" class="twelfthInput">
                 <label id="label" for="Input12">ხარისხი</label>
-                <select oninput="validation11()" name="Input12" id="Input12">
-                    <option value="0"><span>აირჩიეთ ხარისხი</span></option>
-                    <option value="1"><span>საშუალო სკოლის დიპლომი</span></option>
-                    <option value="2"><span>ზოგადსაგანმანათლებლო დიპლომი</span></option>
-                    <option value="3"><span>ბაკალავრი</span></option>
-                    <option value="4"><span>მაგისტრი</span></option>
-                    <option value="5"><span>დოქტორი</span></option>
-                    <option value="6"><span>ასოცირებული ხარისხი</span></option>
-                    <option value="7"><span>სტუდენტი</span></option>
-                    <option value="8"><span>კოლეჯი(ხარისიხს გარეშე)</span></option>
-                    <option value="9"><span>სხვა</span></option>
+                <select oninput="validation11(), storage12()" name="Input12" id="Input12">
+                    <option value="0">აირჩიეთ ხარისხი</option>
+                    <option value="1">საშუალო სკოლის დიპლომი</option>
+                    <option value="2">ზოგადსაგანმანათლებლო დიპლომი</option>
+                    <option value="3">ბაკალავრი</option>
+                    <option value="4">მაგისტრი</option>
+                    <option value="5">დოქტორი</option>
+                    <option value="6">ასოცირებული ხარისხი</option>
+                    <option value="7">სტუდენტი</option>
+                    <option value="8">კოლეჯი(ხარისიხს გარეშე)</option>
+                    <option value="9">სხვა</option>
                 </select>
                 <i id="Warning12" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified12" class="fa-solid fa-circle-check"></i>
@@ -43,16 +43,15 @@
 
             <div id="thirteenthInput" class="thirteenthInput">
                 <label id="label" for="inputCalendar3">დამთავრების რიცხვი</label>
-                <input oninput="validation12()" type="date" id="inputCalendar3">
+                <input oninput="validation12(), storage13()" type="date" id="inputCalendar3">
                 <i id="Warning13" class="fa-solid fa-triangle-exclamation"></i>
                 <i id="Verified13" class="fa-solid fa-circle-check"></i>
             </div>
 
             <div id="fourteenthInput" class="fourteenthInput">
                 <label id="label" for="Input14">აღწერა</label>
-                <textarea oninput="validation13()" name="Input14" id="Input14" placeholder="განათლების აღწერა"></textarea>
+                <textarea oninput="validation13(), storage14()" name="Input14" id="Input14" placeholder="განათლების აღწერა"></textarea>
                 <i id="Warning14" class="fa-solid fa-triangle-exclamation"></i>
-                <i id="Verified14" class="fa-solid fa-circle-check"></i>
             </div>
 
             <div id="line4" class="line4"></div>
@@ -64,8 +63,74 @@
             <button type="button" onclick="GoingToResume()" id="Next3" class="Next3"><span>დასრულება</span></button>
 
         </section>
-        <section class="right"></section>
+        <section id="right" class="right">
+
+            <div id="forNameAndSurname" class="forNameAndSurname">
+                <p id="RightName" class="RightName"></p>
+                <p id="RightSurame" class="RightSurame"></p>
+            </div>
+            <div id="RightImage" class="RightImage"></div>
+            <i id="fa-at" class="fa-solid fa-at"></i>
+            <p id="RightMail" class="RightMail"></p>
+            <i id="fa-phone" class="fa-solid fa-phone"></i>
+            <p id="RightPhoneNumber" class="RightPhoneNumber"></p>
+            <p id="RightAboutMe" class="RightAboutMe">ჩემ შესახებ</p>
+            <p id="RightAboutMeInput" class="RightAboutMeInput"></p>
+
+            <div id="lineForRight" class="lineForRight"></div>
+
+            <p id="ExperiencePElement">გამოცდილება</p>
+            <div class="Employee-EmployerDiv">
+                <p id="EmployeeInput"></p>
+                <p id="EmployerInput"></p>
+            </div>
+            <p id="StartTime"></p>
+            <p id="EndTime"></p>
+            <p id="ExperienceDescription"></p>
+
+            <div id="lineForRight2" class="lineForRight2"></div>
+
+            <p id="RightEducationElement">განათლება</p>
+            <div id="EducationDivForDegree">
+                <p id="RightAcademy"></p>
+                <p id="RightSelect"></p>
+            </div>
+            <p id="RightEndTime2"></p>
+            <p id="EducationDescription"></p>
+
+            <div id="Logo2ForRight" class="Logo2ForRight"></div>
+        </section>
     </main>
+
+    <script>
+
+        function NonReloadEducation() {
+            document.getElementById("Input11").value = localStorage.getItem("Academy");
+            let SelectOption = document.getElementsByName('Input12')[0];
+            let Text = SelectOption.options[SelectOption.selectedIndex];
+            Text.text = localStorage.getItem("Degree");
+            document.getElementById("inputCalendar3").value = localStorage.getItem("Degree end time");
+            document.getElementById("Input14").value = localStorage.getItem("Education Description");
+
+            if(localStorage.getItem("Academy") != "" && localStorage.getItem("Academy") != null ){
+                storage11();
+                validation10();
+            }
+            if(localStorage.getItem("Degree") != "" && localStorage.getItem("Degree") != null){
+                storage12();
+                validation11();
+            }
+            if(localStorage.getItem("Degree end time") != "" && localStorage.getItem("Degree end time") != null){
+                storage13();
+                validation12();
+            }
+            if(localStorage.getItem("Education Description") != "" && localStorage.getItem("Education Description") != null){
+                storage14();
+                validation13();
+            }
+        }
+
+    </script>
     <script src="https://kit.fontawesome.com/ebb471ca54.js" crossorigin="anonymous"></script>
     <script src="./Script.js"></script>
     <script src="./main.js"></script>
