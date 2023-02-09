@@ -34,7 +34,7 @@
                     <option value="5">დოქტორი</option>
                     <option value="6">ასოცირებული ხარისხი</option>
                     <option value="7">სტუდენტი</option>
-                    <option value="8">კოლეჯი(ხარისიხს გარეშე)</option>
+                    <option value="8">კოლეჯი(ხარისხის გარეშე)</option>
                     <option value="9">სხვა</option>
                 </select>
                 <i id="Warning12" class="fa-solid fa-triangle-exclamation"></i>
@@ -107,7 +107,7 @@
         function NonReloadEducation() {
             document.getElementById("Input11").value = localStorage.getItem("Academy");
             let SelectOption = document.getElementsByName('Input12')[0];
-            let Text = SelectOption.options[SelectOption.selectedIndex];
+            let Text = SelectOption.options[SelectOption.selectedIndex].text;
             Text.text = localStorage.getItem("Degree");
             document.getElementById("inputCalendar3").value = localStorage.getItem("Degree end time");
             document.getElementById("Input14").value = localStorage.getItem("Education Description");

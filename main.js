@@ -256,7 +256,7 @@ function storage11(){
 function storage12(){
     let Input12StorageValue = document.getElementsByName('Input12')[0];
     let Text = Input12StorageValue.options[Input12StorageValue.selectedIndex].text;
-    if(Text != 0){
+    if(Text != "" && Input12StorageValue.value != 0){
         sessionStorage.setItem("Degree", Text);
         localStorage.setItem("Degree", Text);
         const employer = document.getElementById("RightSelect");
@@ -460,9 +460,9 @@ function validation10() {
 
 function validation11() {
     let SelectOption = document.getElementsByName('Input12')[0];
-    let Text = SelectOption.options[SelectOption.selectedIndex];
+    let Text = SelectOption.options[SelectOption.selectedIndex].text;
     
-    if (Text == "") {
+    if (SelectOption.value == 0 && Text != "") {
         document.getElementById("Input12").style.border = "1px solid #F02424";
         document.getElementById("Warning12").style.display = "block";
         return false;
